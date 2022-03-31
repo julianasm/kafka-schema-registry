@@ -14,14 +14,12 @@ public class CreateEquipment {
     public void create() throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         com.kafkaestudos.proto.Equipment equipment = com.kafkaestudos.proto.Equipment.newBuilder().build();
 
-        equipment.toBuilder().setId("1");
-        equipment.toBuilder().setDescription("teste");
+        equipment.toBuilder().setId(1);
+        equipment.toBuilder().setColor("teste");
         equipment.toBuilder().build();
 
-        if (!equipment.getId().equals("1"))
-            producer.send(new ProducerRecord("topic_equipment_kafka", equipment.getId(), equipment));
-        else
-            producer.send(new ProducerRecord("topic_equipment_kafka", equipment.getId(), null));
+
+        producer.send(new ProducerRecord("equipment", "1", null));
 
     }
 

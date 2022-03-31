@@ -4,8 +4,6 @@ services:
   #  Zookeepers
   zookeeper:
     image: zookeeper:3.7.0
-    networks:
-      - broker-kafka
     restart: always
     hostname: zookeeper
     ports:
@@ -49,8 +47,6 @@ services:
   #kafka broker
   kafka1:
     image: confluentinc/cp-kafka:6.2.0
-    networks:
-      - broker-kafka
     depends_on:
       - zookeeper
       - schemaregistry
@@ -80,8 +76,6 @@ services:
 
   kafka2:
     image: confluentinc/cp-kafka:6.2.0
-    networks:
-      - broker-kafka
     depends_on:
       - zookeeper
       - schemaregistry
@@ -110,8 +104,6 @@ services:
         max-file: "10"
   kafka3:
     image: confluentinc/cp-kafka:6.2.0
-    networks:
-      - broker-kafka
     depends_on:
       - zookeeper
       - schemaregistry
@@ -141,8 +133,6 @@ services:
 
   kafdrop:
     image: obsidiandynamics/kafdrop:latest
-    networks:
-      - broker-kafka
     depends_on:
       - kafka1
       - kafka2
@@ -209,8 +199,6 @@ services:
 
   db:
     image: postgis/postgis:14-master
-    networks:
-      - broker-kafka
     restart: always
     environment:
       POSTGRES_USER: ${POSTGRES_USER}
@@ -278,6 +266,3 @@ services:
       - kafka1
       - schemaregistry
 
-networks:
-  broker-kafka:
-    driver: bridge

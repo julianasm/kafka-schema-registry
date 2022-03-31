@@ -7,5 +7,4 @@ message Equipment {
   int64 idUser = 2;
   string color = 3;
 
-
 }
