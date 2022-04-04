@@ -8,10 +8,10 @@ import org.springframework.kafka.config.TopicBuilder;
 @Configuration
 public class KafkaTopicConfig {
 
+
     @Bean
     public NewTopic newBoundriesTopic() {
-        return TopicBuilder.name("boundries")
+        return TopicBuilder.name("new-user")
                 .build();
     }
-
 }

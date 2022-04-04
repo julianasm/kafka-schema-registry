@@ -9,7 +9,7 @@ import java.lang.reflect.InvocationTargetException;
 
 public class CreateEquipment {
 
-    private  static  final KafkaProducer<String, Message> producer  =   new Producer().getProducer();
+   /* private  static  final KafkaProducer<String, Message> producer  =   new Producer().getProducer();
 
     public void create() throws ClassNotFoundException, NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         com.kafkaestudos.proto.Equipment equipment = com.kafkaestudos.proto.Equipment.newBuilder().build();
@@ -21,6 +21,6 @@ public class CreateEquipment {
 
         producer.send(new ProducerRecord("equipment", "1", null));
 
-    }
+    }*/
 
 }

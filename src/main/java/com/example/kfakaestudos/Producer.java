@@ -1,6 +1,7 @@
 package com.example.kfakaestudos;
 
 import com.google.protobuf.Message;
+import com.kafkaestudos.proto.Users;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerConfig;
 
@@ -8,7 +9,7 @@ import java.util.Properties;
 
 public class Producer {
 
-    private KafkaProducer<String, Message> producer = null;
+    private KafkaProducer<String, Users> producer = null;
 
     public Producer() {
         // create Producer properties
@@ -33,7 +34,7 @@ public class Producer {
         }));
     }
 
-    public KafkaProducer<String, Message> getProducer() {
+    public KafkaProducer<String, Users> getProducer() {
         return this.producer;
     }
 }

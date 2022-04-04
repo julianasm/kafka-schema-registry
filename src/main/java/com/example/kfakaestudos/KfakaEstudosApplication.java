@@ -5,6 +5,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.kafka.core.KafkaTemplate;
+import com.example.kfakaestudos.CreateUser;
 
 @SpringBootApplication
 public class KfakaEstudosApplication {
@@ -13,7 +14,7 @@ public class KfakaEstudosApplication {
         SpringApplication.run(KfakaEstudosApplication.class, args);
 
         try {
-            new CreateBoundries().create();
+            new CreateUser().create();
         } catch (Exception e){e.printStackTrace();
         }
     }
